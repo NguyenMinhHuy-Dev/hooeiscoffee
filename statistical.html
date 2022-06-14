@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+    <title>hooei's Coffee</title>
+</head>
+<body class="main__page">
+    <div id="side-bar" class="side-bar">
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-leaf"></i>
+                <i class="fa-solid fa-mug-saucer"></i>
+            </div>
+            <div class="logo-brand">
+                <span>
+                    hooei's Coffee
+                </span>
+            </div>
+        </div>
+        <div class="management-list">
+            <ul>
+                <li>
+                    <div class="management">
+                        <a href="index.html"><span>MENU</span></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="management">
+                        <a href="statistical.html"><span>STATISTICAL</span></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="management">
+                        <a href="drinks.html"><span>DRINK MANAGEMENT</span></a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="management">
+                        <span>CATEGORY MANAGEMENT</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="management">
+                        <span>BILL MANAGEMENT</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="management">
+                        <span>ACCOUNT MANAGEMENT</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="signout-button">
+            <button id="logout"><a href="signin.html">Log out</a></button>
+        </div>
+    </div> 
+
+    <div id="main" class="main">
+        
+        <div class="header">
+            <div class="toggle">
+                <i id="toggle-bars" class="fa-solid fa-bars"></i>
+            </div>
+            <div class="header-right">
+             
+                <div class="bell">
+                    <i class="fa-regular fa-bell"></i>
+                </div>
+                <div class="account-info"> 
+                    <span>Hello, Nguyễn Minh Huy</span>
+                </div>
+               
+            </div>
+        </div>
+
+        <div id="main-cover" class="main-cover statistical">
+
+            <div class="chart best-type">
+                <canvas id="myChart3" style=""></canvas>
+            </div>
+
+            <div class="chart best-type">
+                <canvas id="myChart" style=""></canvas>
+            </div>
+
+            <div class="chart best-drink">
+                <canvas id="myChart2" style=""></canvas>
+            </div> 
+
+            <div class="chart best-drink">
+                <canvas id="myChart4" style=""></canvas>
+            </div>
+        </div>
+    </div>
+
+    
+    
+
+    <script>
+        $(document).ready(function() {
+            $('#toggle-bars').click(function() {
+                document.getElementById('side-bar').classList.toggle('active');
+                document.getElementById('main').classList.toggle('active');
+            });   
+        });
+    </script>
+
+    <script>
+        var yValues = [101000000, 234000000,156000000,132000000,123000000,415000000,156000000,156000000,116000000,236000000,654000000,145400000];
+        var xValues = [1,2,3,5,6,7,8,9,10,11,12];
+        
+        new Chart("myChart3", {
+        type: "line",
+        data: {
+            labels: xValues,
+            datasets: [{
+            fill: false,
+            lineTension: 0,
+            backgroundColor: "#34495e",
+            borderColor: "#f092f2",
+            data: yValues
+            }]
+        },
+        options: {
+            legend: {display: false}, 
+            title: {
+                display: true,
+                text: "MONTHLY INCOME OF THE YEAR 2022"
+            }
+        }
+        });
+    </script>
+
+    <script>
+        var xValues = ["Coffee", "Machine Coffee", "Cold Brew", "Fruit Tea ", "Macchiato"];
+        var yValues = [1987, 1435, 1240, 1878, 1569];
+        var barColors = ["#fd79a8", "#e84393","#f092f2","#fab1a0","#FDA7DF"];
+
+        new Chart("myChart", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+            }]
+        },
+        options: {
+            legend: {display: false},
+            title: {
+            display: true,
+            text: "BEST SELLER OF TYPE DRINKS IN JULY 2022"
+            }
+        }
+        });
+    </script>
+
+    <script>
+        var xValues = ["Cà phê đen", "Trà đào cam sả", "Nước ép cam", "Cà phê Macchiato ", "Trà dâu"];
+        var yValues = [987, 435, 240, 878, 569];
+        var barColors = ["#fd79a8", "#e84393","#f092f2","#fab1a0","#FDA7DF"];
+
+        new Chart("myChart2", {
+        type: "doughnut",
+        data: {
+            labels: xValues,
+            datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+            }]
+        },
+        options: {
+            // legend: {display: false},
+            title: {
+            display: true,
+            text: "TOP 5 OF DRINKS IN JULY 2022"
+            }
+        }
+        });
+    </script>
+
+<script>
+    var xValues = ["Trân châu đen", "Trân châu trắng", "Vải", "Nhãn", "Cheese"];
+    var yValues = [987, 435, 240, 878, 569];
+    var barColors = ["#fd79a8", "#e84393","#f092f2","#fab1a0","#FDA7DF"];
+
+    new Chart("myChart4", {
+    type: "pie",
+    data: {
+        labels: xValues,
+        datasets: [{
+        backgroundColor: barColors,
+        data: yValues
+        }]
+    },
+    options: {
+        // legend: {display: false},
+        title: {
+        display: true,
+        text: "TOP 5 OF TOPPING IN JULY 2022"
+        }
+    }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>hooei's Coffee</title>
+</head>
+<body class="main__page">
+    <div id="side-bar" class="side-bar">
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-leaf"></i>
+                <i class="fa-solid fa-mug-saucer"></i>
+            </div>
+            <div class="logo-brand">
+                <span>
+                    hooei's Coffee
+                </span>
+            </div>
+        </div>
+        <div class="management-list">
+            <ul>
+                <li>
+                    <div class="management">
+                        <a href="index.html"><span>MENU</span></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="management">
+                        <a href="statistical.html"><span>STATISTICAL</span></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="management">
+                        <a href="drinks.html"><span>DRINK MANAGEMENT</span></a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="management">
+                        <a href="category.html"><span>CATEGORY MANAGEMENT</span></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="management">
+                        <a href="bill.html"><span>BILL MANAGEMENT</span></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="management">
+                        <a href="account.html"><span>ACCOUNT MANAGEMENT</span></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="signout-button">
+            <button id="logout"><a href="signin.html">Log out</a></button>
+        </div>
+    </div> 
+
+    <div id="main" class="main">
+        
+        <div class="header">
+            <div class="toggle">
+                <i id="toggle-bars" class="fa-solid fa-bars"></i>
+            </div>
+            <div class="header-right">
+             
+                <div class="bell">
+                    <i class="fa-regular fa-bell"></i>
+                </div>
+                <div class="account-info"> 
+                    <span>Hello, Nguyễn Minh Huy</span>
+                </div>
+               
+            </div>
+        </div>
+
+        <div id="main-cover" class="main-cover">
+
+            <div class="bill-detail">
+                <div class="bill-heading">
+                    <h2>BILL DETAIL</h2>
+                </div>
+                <div class="bill-info">
+                    <table>
+                        <thead>
+                            <th style="width: 50%">NAME</th>
+                            <th style="width: 30%; text-align:center">QUANTITY</th>
+                            <th style="width: 20%; text-align:right">PRICE</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="max-width: 50%; text-align:left">1. Cà phê đen (M)</td>
+                                <td style="text-align:center">
+                                    <input type="number" name="" class="quantity" id="" min="1" value="1">
+                                </td>
+                                <td style="text-align:right">25.000đ</td>
+                            </tr>
+                            <tr>
+                                <td style="max-width: 50%; text-align:left">2. Trà đào cam sả (M)</td>
+                                <td style="text-align:center">
+                                    <input type="number" name="" class="quantity" id="" min="1" value="1">
+                                </td>
+                                
+                                <td style="text-align:right">25.000đ</td>
+                            </tr>
+                            <tr>
+                                <td style="max-width: 50%; text-align:left">3. Trà sữa phô mai (M)</td>
+                                <td style="text-align:center">
+                                    <input type="number" name="" class="quantity" id="" min="1" value="1">
+                                </td>
+                                
+                                <td style="text-align:right">25.000đ</td>
+                            </tr>
+                            <tr>
+                                <td style="max-width: 50%; text-align:left">4. Nước ép cam (M)</td>
+                                <td style="text-align:center">
+                                    <input type="number" name="" class="quantity" id="" min="1" value="1">
+                                </td>
+                                
+                                <td style="text-align:right">25.000đ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bill-footing">
+                    <span>PRICE: 100.000đ</span>
+                    <span>DISCOUNT: 10%</span>
+                    <span>TOTAL PRICE: 90.000đ</span>
+                </div>
+                <div class="button-pay">
+                    <button id="pay">PAY</button>
+                </div>
+            </div>
+            <div class="drinks">
+                <div class="tab">
+                    <button class="tabLinks active">Coffee</button> 
+                    <button class="tabLinks">Machine Coffee</button> 
+                    <button class="tabLinks">Cold Brew</button> 
+                    <button class="tabLinks">Fruit Tea</button> 
+                    <button class="tabLinks">Macchiato</button>  
+                    <input type="text" class="search" placeholder="Search...">
+                </div>
+
+                <div id="tab-content" class="tab-content">
+                    <ul> 
+                        <li>
+                            <div class="drink">
+                                <div class="image">
+                                    <img src="img/black coffee.png" alt="">
+                                </div>
+                                <div class="name">
+                                    <span>Cà phê đen (M)</span>
+                                </div>
+                            </div>
+                        </li>  
+                        <li>
+                            <div class="drink">
+                                <div class="image">
+                                    <img src="img/black coffee.png" alt="">
+                                </div>
+                                <div class="name">
+                                    <span>Cà phê đen (M)</span>
+                                </div>
+                            </div>
+                        </li>  
+                        <li>
+                            <div class="drink">
+                                <div class="image">
+                                    <img src="img/black coffee.png" alt="">
+                                </div>
+                                <div class="name">
+                                    <span>Cà phê đen (M)</span>
+                                </div>
+                            </div>
+                        </li>  
+                        <li>
+                            <div class="drink">
+                                <div class="image">
+                                    <img src="img/black coffee.png" alt="">
+                                </div>
+                                <div class="name">
+                                    <span>Cà phê đen (M)</span>
+                                </div>
+                            </div>
+                        </li>  
+                        <li>
+                            <div class="drink">
+                                <div class="image">
+                                    <img src="img/black coffee.png" alt="">
+                                </div>
+                                <div class="name">
+                                    <span>Cà phê đen (M)</span>
+                                </div>
+                            </div>
+                        </li>  
+                        <li>
+                            <div class="drink">
+                                <div class="image">
+                                    <img src="img/black coffee.png" alt="">
+                                </div>
+                                <div class="name">
+                                    <span>Cà phê đen (M)</span>
+                                </div>
+                            </div>
+                        </li>  
+                        <li>
+                            <div class="drink">
+                                <div class="image">
+                                    <img src="img/black coffee.png" alt="">
+                                </div>
+                                <div class="name">
+                                    <span>Cà phê đen (M)</span>
+                                </div>
+                            </div>
+                        </li>  
+                        <li>
+                            <div class="drink">
+                                <div class="image">
+                                    <img src="img/black coffee.png" alt="">
+                                </div>
+                                <div class="name">
+                                    <span>Cà phê đen (M)</span>
+                                </div>
+                            </div>
+                        </li>  
+                        <li>
+                            <div class="drink">
+                                <div class="image">
+                                    <img src="img/black coffee.png" alt="">
+                                </div>
+                                <div class="name">
+                                    <span>Cà phê đen (M)</span>
+                                </div>
+                            </div>
+                        </li>  
+                        <li>
+                            <div class="drink">
+                                <div class="image">
+                                    <img src="img/black coffee.png" alt="">
+                                </div>
+                                <div class="name">
+                                    <span>Cà phê đen (M)</span>
+                                </div>
+                            </div>
+                        </li>  
+                        <li>
+                            <div class="drink">
+                                <div class="image">
+                                    <img src="img/black coffee.png" alt="">
+                                </div>
+                                <div class="name">
+                                    <span>Cà phê đen (M)</span>
+                                </div>
+                            </div>
+                        </li>  
+                        <li>
+                            <div class="drink">
+                                <div class="image">
+                                    <img src="img/black coffee.png" alt="">
+                                </div>
+                                <div class="name">
+                                    <span>Cà phê đen (M)</span>
+                                </div>
+                            </div>
+                        </li>  
+                        <li>
+                            <div class="drink">
+                                <div class="image">
+                                    <img src="img/black coffee.png" alt="">
+                                </div>
+                                <div class="name">
+                                    <span>Cà phê đen (M)</span>
+                                </div>
+                            </div>
+                        </li>  
+                        <li>
+                            <div class="drink">
+                                <div class="image">
+                                    <img src="img/black coffee.png" alt="">
+                                </div>
+                                <div class="name">
+                                    <span>Cà phê đen (M)</span>
+                                </div>
+                            </div>
+                        </li>  
+                        <li>
+                            <div class="drink">
+                                <div class="image">
+                                    <img src="img/black coffee.png" alt="">
+                                </div>
+                                <div class="name">
+                                    <span>Cà phê đen (M)</span>
+                                </div>
+                            </div>
+                        </li>  
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    
+
+    <script>
+        $(document).ready(function() {
+            $('#toggle-bars').click(function() {
+                document.getElementById('side-bar').classList.toggle('active');
+                document.getElementById('main').classList.toggle('active');
+            });   
+        });
+    </script>
+</body>
+</html>
